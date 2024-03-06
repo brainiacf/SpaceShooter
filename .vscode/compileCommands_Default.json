@@ -1,0 +1,58 @@
+[
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\PixelShipController.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\PixelShipController.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\PixelShipPlayer.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\PixelShipPlayer.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\SmallShooter.Build.cs",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\SmallShooter.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Backup\\SmallShooter\\SpaceShooter\\Source\\SmallShooter\\SmallShooter.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Backup\\SmallShooter\\SpaceShooter\\.vscode\\compileCommands_Default\\SmallShooter.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	}
+]

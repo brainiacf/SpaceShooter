@@ -1,0 +1,613 @@
+{
+	"folders": [
+		{
+			"name": "SmallShooter",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "C:\\Program Files\\Epic Games\\UE_5.3"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "SmallShooter Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Debug",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Debug",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooter Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Debug",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"DebugGame",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"DebugGame",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooter Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"DebugGame",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Development",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Development",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooter Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Development",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Test",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Test",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooter Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Test",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Shipping",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Shipping",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooter Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooter Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooter",
+					"Win64",
+					"Shipping",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"Debug",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"Debug",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooterEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"Debug",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"DebugGame",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"DebugGame",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooterEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"DebugGame",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"Development",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"Development",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SmallShooterEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"label": "SmallShooterEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"SmallShooterEditor",
+					"Win64",
+					"Development",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch SmallShooter (Debug)",
+				"request": "launch",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "SmallShooter Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooter (DebugGame)",
+				"request": "launch",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "SmallShooter Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooter (Development)",
+				"request": "launch",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "SmallShooter Win64 Development Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooter (Test)",
+				"request": "launch",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "SmallShooter Win64 Test Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooter (Shipping)",
+				"request": "launch",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "SmallShooter Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooterEditor (Debug)",
+				"request": "launch",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "SmallShooterEditor Win64 Debug Build",
+				"args": [
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject"
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooterEditor (DebugGame)",
+				"request": "launch",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "SmallShooterEditor Win64 DebugGame Build",
+				"args": [
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject"
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch SmallShooterEditor (Development)",
+				"request": "launch",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "SmallShooterEditor Win64 Development Build",
+				"args": [
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject"
+				],
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\Program Files\\Epic Games\\UE_5.3"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "externalTerminal",
+				"stopAtEntry": false,
+				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3"
+			}
+		]
+	}
+}
