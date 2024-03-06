@@ -30,7 +30,7 @@
 					"SmallShooter",
 					"Win64",
 					"Debug",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -47,7 +47,7 @@
 					"SmallShooter",
 					"Win64",
 					"Debug",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -67,7 +67,7 @@
 					"SmallShooter",
 					"Win64",
 					"Debug",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -84,7 +84,7 @@
 					"SmallShooter",
 					"Win64",
 					"DebugGame",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -101,7 +101,7 @@
 					"SmallShooter",
 					"Win64",
 					"DebugGame",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -121,7 +121,7 @@
 					"SmallShooter",
 					"Win64",
 					"DebugGame",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -138,7 +138,7 @@
 					"SmallShooter",
 					"Win64",
 					"Development",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -155,7 +155,7 @@
 					"SmallShooter",
 					"Win64",
 					"Development",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -175,7 +175,7 @@
 					"SmallShooter",
 					"Win64",
 					"Development",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -192,7 +192,7 @@
 					"SmallShooter",
 					"Win64",
 					"Test",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -209,7 +209,7 @@
 					"SmallShooter",
 					"Win64",
 					"Test",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -229,7 +229,7 @@
 					"SmallShooter",
 					"Win64",
 					"Test",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -246,7 +246,7 @@
 					"SmallShooter",
 					"Win64",
 					"Shipping",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -263,7 +263,7 @@
 					"SmallShooter",
 					"Win64",
 					"Shipping",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -283,7 +283,7 @@
 					"SmallShooter",
 					"Win64",
 					"Shipping",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -300,7 +300,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"Debug",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -317,7 +317,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"Debug",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -337,7 +337,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"Debug",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -354,7 +354,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"DebugGame",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -371,7 +371,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"DebugGame",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -391,7 +391,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"DebugGame",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -408,7 +408,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"Development",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -425,7 +425,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"Development",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -445,7 +445,7 @@
 					"SmallShooterEditor",
 					"Win64",
 					"Development",
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -462,7 +462,7 @@
 			{
 				"name": "Launch SmallShooter (Debug)",
 				"request": "launch",
-				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 				"preLaunchTask": "SmallShooter Win64 Debug Build",
 				"args": [
 				],
@@ -478,7 +478,7 @@
 			{
 				"name": "Launch SmallShooter (DebugGame)",
 				"request": "launch",
-				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 				"preLaunchTask": "SmallShooter Win64 DebugGame Build",
 				"args": [
 				],
@@ -494,7 +494,7 @@
 			{
 				"name": "Launch SmallShooter (Development)",
 				"request": "launch",
-				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame.exe",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame.exe",
 				"preLaunchTask": "SmallShooter Win64 Development Build",
 				"args": [
 				],
@@ -510,7 +510,7 @@
 			{
 				"name": "Launch SmallShooter (Test)",
 				"request": "launch",
-				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 				"preLaunchTask": "SmallShooter Win64 Test Build",
 				"args": [
 				],
@@ -526,7 +526,7 @@
 			{
 				"name": "Launch SmallShooter (Shipping)",
 				"request": "launch",
-				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"program": "D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 				"preLaunchTask": "SmallShooter Win64 Shipping Build",
 				"args": [
 				],
@@ -545,7 +545,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "SmallShooterEditor Win64 Debug Build",
 				"args": [
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject"
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
 				"stopAtEntry": false,
@@ -562,7 +562,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "SmallShooterEditor Win64 DebugGame Build",
 				"args": [
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject"
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
 				"stopAtEntry": false,
@@ -579,7 +579,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "SmallShooterEditor Win64 Development Build",
 				"args": [
-					"D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject"
+					"D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.3",
 				"stopAtEntry": false,
@@ -599,7 +599,7 @@
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=D:\\Backup\\SmallShooter\\SpaceShooter\\SmallShooter.uproject",
+					"-project=D:\\Backup\\SmallShooter\\SpaceShooter\\SpaceShooter\\SmallShooter.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"
