@@ -10,6 +10,7 @@
 #include "Engine/LocalPlayer.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "Curves/CurveFloat.h"
 
 APixelShipPlayer::APixelShipPlayer()
 {
@@ -73,7 +74,7 @@ void APixelShipPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 		// Moving
 		EnhancedInputComponent->BindAction(MoveForwardAction, ETriggerEvent::Triggered, this, &ThisClass::MoveForward);
 		EnhancedInputComponent->BindAction(MoveRightAction, ETriggerEvent::Triggered, this, &ThisClass::MoveRight);
-
+		EnhancedInputComponent->BindAction(MoveForwardAction,ETriggerEvent::Completed, this, &ThisClass::MoveForward_RE);
 		// Looking
 		//EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AEnhancedInputDeleteCharacter::Look);
 	}
@@ -88,28 +89,50 @@ void APixelShipPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 void APixelShipPlayer::MoveForward(const FInputActionValue& Value)
 {
 	float InputValue = Value.Get<float>();
+	HoldStartTime = GetWorld()->GetTimeSeconds();
+
+	CurveValueForward = AccelerationFloatCurve->GetFloatValue(HoldStartTime);
 	
 	if(Controller != nullptr && Arrow != nullptr )
 	{
-		if(InputValue != 0.0f){ ForwardDirection = Arrow->GetForwardVector() * MovementSpeed * InputValue ;}
+		if(InputValue != 0.0f){ ForwardDirection = Arrow->GetForwardVector() * MovementSpeed * InputValue* CurveValueForward ;}
 		
 		//PixelShip->SetPhysicsLinearVelocity(ForwardDirection);
 		SetActorLocation(GetActorLocation() + ForwardDirection);
-		
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("ForwardDirection: %s"), *ForwardDirection.ToString()));
+		//PixelShip->AddForce(ForwardDirection);
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("ForwardDirection: %s"), *ForwardDirection.ToString()));
 	}
 }
 
 void APixelShipPlayer::MoveRight(const FInputActionValue& Value)
 {
 	float InputValue = Value.Get<float>();
+	float HoldStartTime_MoveRight = GetWorld()->GetTimeSeconds();
+
+	CurveValueRight = AccelerationFloatCurve->GetFloatValue(HoldStartTime_MoveRight);
+
 	if (Controller != nullptr && Arrow !=nullptr)
 	{	
 		RightDirection = Arrow->GetUpVector();
-		if (InputValue != 0.0f) { DirectionVec = RightDirection * MovementSpeed * InputValue; }
+		if (InputValue != 0.0f) { DirectionVec = RightDirection * MovementSpeed * InputValue*CurveValueRight; }
 		//PixelShip->SetPhysicsLinearVelocity(DirectionVec);
 		SetActorLocation(GetActorLocation() + DirectionVec);
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("RightDirection: %s"), *RightDirection.ToString()));
+		//PixelShip->AddForce(DirectionVec);
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("RightDirection: %s"), *RightDirection.ToString()));
+	}
+}
+
+void APixelShipPlayer::MoveForward_RE(const FInputActionValue& Value)
+{
+	float InputValue = Value.Get<float>();
+	
+	if (Controller != nullptr && Arrow != nullptr)
+	{	
+		
+		
+
+		
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("InputValue_RE: %f"),InputValue )); 
 	}
 }
 
