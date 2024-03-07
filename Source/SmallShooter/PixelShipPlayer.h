@@ -40,6 +40,7 @@ public:
 
 	FVector ForwardDirection;
 	FVector RightDirection;
+	FVector DirectionVec;
 
 	//
 
