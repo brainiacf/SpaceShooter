@@ -48,6 +48,7 @@ public:
 
 	//
 	float HoldStartTime;
+	float HoldEndTime;
 
 	//
 
@@ -67,9 +68,15 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PixelShip", meta = (AllowPrivateAccess = "true"))
 	UCurveFloat* AccelerationFloatCurve;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PixelShip", meta = (AllowPrivateAccess = "true"))
+	UCurveFloat* BrakeFloatCurve;
+	//	
+
+	/*Curve Values*/
 	float CurveValueForward;
 	float CurveValueRight;
-
+	float CurveValueBrake;
+	//
 
 	/*Timer Delegate*/
 	FTimerHandle DecelerationTimerHandle;
