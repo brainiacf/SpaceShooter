@@ -1,3 +1,5 @@
+/* the scariest thing in the world is the darkness in our hearts and how it erases the beauty in everything */
+
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
@@ -19,6 +21,7 @@ class UCurveFloat;
 
 //
 struct FInputActionValue;
+struct FInputActionInstance;
 
 UCLASS()
 class SMALLSHOOTER_API APixelShipPlayer : public APawn
@@ -50,11 +53,18 @@ public:
 	/*Propertey for Movement*/
 	UPROPERTY(EditAnywhere)
     float MovementSpeed = 500.0f;
+	UPROPERTY(EditAnywhere)
+	float MaximumRotation = 25.0f;
+	UPROPERTY(EditAnywhere)
+	float ShipIntertia = 500.0f;	
 	
 
 	FVector ForwardDirection;
 	FVector RightDirection;
 	FVector DirectionVec;
+
+	FRotator ShipRotation;
+	FRotator GreenArrowRotation;
 	
 	float HoldStartTime;
 	float HoldEndTime;
@@ -80,27 +90,28 @@ private:
 	UCurveFloat* AccelerationFloatCurve;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PixelShip", meta = (AllowPrivateAccess = "true"))
 	UCurveFloat* BrakeFloatCurve;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PixelShip", meta = (AllowPrivateAccess="true"))
+	UCurveFloat* RotationFloatCurve;
 	//	
 
 	/*Curve Values*/
 	float CurveValueForward;
 	float CurveValueRight;
 	float CurveValueBrake;
+	float CurveValueRotation;
 	//
-
-	/*Timer Delegate*/
-	FTimerHandle DecelerationTimerHandle;
 
 protected:
 
 	virtual void BeginPlay() override;
 
-	/*Movement Methods*/
+	/*Movement Methods*/ // [_RE-> Realeased]
 	void MoveForward(const FInputActionValue& Value);
 	void MoveForward_RE(const FInputActionValue& Value);
-    void MoveRight(const FInputActionValue& Value);
+    void MoveRight(const FInputActionInstance& Instance);
+	void MoveRight_RE(const FInputActionValue& Value);
 	//
-	
+
 public:	
 	
 	virtual void Tick(float DeltaTime) override;

@@ -79,6 +79,7 @@ void APixelShipPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 		EnhancedInputComponent->BindAction(MoveForwardAction, ETriggerEvent::Triggered, this, &ThisClass::MoveForward);
 		EnhancedInputComponent->BindAction(MoveRightAction, ETriggerEvent::Triggered, this, &ThisClass::MoveRight);
 		EnhancedInputComponent->BindAction(MoveForwardAction,ETriggerEvent::Completed, this, &ThisClass::MoveForward);
+		EnhancedInputComponent->BindAction(MoveRightAction, ETriggerEvent::Completed, this, &ThisClass::MoveRight_RE);
 		// Looking
 		//EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AEnhancedInputDeleteCharacter::Look);
 	}
@@ -103,18 +104,23 @@ void APixelShipPlayer::MoveForward(const FInputActionValue& Value)
 		
 		PixelShip->SetPhysicsLinearVelocity(ForwardDirection,true);
 	
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("InputValue: %f"),InputValue));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("InputValue: %f"),InputValue));
 	}
 
 	
 }
 
-void APixelShipPlayer::MoveRight(const FInputActionValue& Value)
+void APixelShipPlayer::MoveRight(const FInputActionInstance& Instance)
 {
-	float InputValue = Value.Get<float>();
-	float HoldStartTime_MoveRight = GetWorld()->GetTimeSeconds();
+	float InputValue = Instance.GetValue().Get<float>();
+	float ElapsedTime = Instance.GetElapsedTime();
+	//float HoldStartTime_MoveRight = GetWorld()->GetTimeSeconds();
+	//if(InputValue == 0.0f){HoldStartTime_MoveRight = 0.0f;}//Reset the time to 0.0f if the input value is 0.0f
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("TIme: %f"),HoldStartTime_MoveRight));
 	//
-	if(AccelerationFloatCurve != nullptr){CurveValueRight = AccelerationFloatCurve->GetFloatValue(HoldStartTime_MoveRight);}
+	if(AccelerationFloatCurve != nullptr){CurveValueRight = AccelerationFloatCurve->GetFloatValue(ElapsedTime);}
+	if(BrakeFloatCurve != nullptr){CurveValueBrake = BrakeFloatCurve->GetFloatValue(ElapsedTime);}
+	if(RotationFloatCurve != nullptr){CurveValueRotation = RotationFloatCurve->GetFloatValue(ElapsedTime);}
 	//
 	if (Controller != nullptr && GreenArrow !=nullptr)
 	{	
@@ -123,6 +129,28 @@ void APixelShipPlayer::MoveRight(const FInputActionValue& Value)
 		if (InputValue != 0.0f) { DirectionVec = RightDirection * MovementSpeed * InputValue*CurveValueRight; }
 	
 		PixelShip->SetPhysicsLinearVelocity(DirectionVec,true);
+
+		ShipRotation = PixelShip->GetComponentRotation();
+
+		GreenArrowRotation = GreenArrow->GetComponentRotation();
+		float TargetRotation = MaximumRotation*CurveValueRotation;
+		
+		float RollIntepTo = FMath::FInterpTo(GreenArrowRotation.Roll,TargetRotation*InputValue,GetWorld()->GetDeltaSeconds(),ShipIntertia);
+		float ClampRollTo = FMath::Clamp(RollIntepTo,-MaximumRotation,MaximumRotation);
+		PixelShip->SetRelativeRotation(
+			FRotator(-ClampRollTo,PixelShip->GetComponentRotation().Yaw,PixelShip->GetComponentRotation().Roll),
+			true);
+		//if input value -1[A] or 1[D]
+
+	}
+
+}
+void APixelShipPlayer::MoveRight_RE(const FInputActionValue& Value)
+{
+	float InputValue = Value.Get<float>();
+	
+	if (Controller != nullptr )
+	{	
 
 	}
 }
