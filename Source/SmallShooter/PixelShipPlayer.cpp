@@ -1,6 +1,5 @@
 #include "PixelShipPlayer.h"
 #include "Components/StaticMeshComponent.h"
-#include "Components/ArrowComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/Controller.h"
@@ -11,6 +10,7 @@
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "Curves/CurveFloat.h"
+#include "Components/ArrowComponent.h"
 
 APixelShipPlayer::APixelShipPlayer()
 {
@@ -19,23 +19,32 @@ APixelShipPlayer::APixelShipPlayer()
 
 	PixelShip = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PixelShip"));
 
-	Arrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow"));
-	Arrow->SetupAttachment(PixelShip);
-
+	/*Initialize Arrow Components*/
+	BlueArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("BlueArrow"));
+	BlueArrow->ArrowColor = FColor::Blue;
+	
+	GreenArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("GreenArrow"));
+	GreenArrow->ArrowColor = FColor::Green;
+	
+	RedArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("RedArrow"));
+	RedArrow->ArrowColor = FColor::Red;
+	//
 	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
 	Capsule->SetupAttachment(PixelShip);
 	//23.197985 capsule half height
 	//23.197985 capsule radius
-
+	
+	/*SpringArom Component*/
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(Capsule);
 	SpringArm->TargetArmLength = 250.0f;
 	SpringArm->bUsePawnControlRotation = true;
-
+	//
+	/*Camera Component*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
 	Camera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
-
+	//
 	//UFloatingPawnMovement* FloatingPawnMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingPawnMovement"));
 	
 }
@@ -66,12 +75,7 @@ void APixelShipPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
-		
-		// Jumping
-		//EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-		//EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-
-		// Moving
+		/*Moving*/
 		EnhancedInputComponent->BindAction(MoveForwardAction, ETriggerEvent::Triggered, this, &ThisClass::MoveForward);
 		EnhancedInputComponent->BindAction(MoveRightAction, ETriggerEvent::Triggered, this, &ThisClass::MoveRight);
 		EnhancedInputComponent->BindAction(MoveForwardAction,ETriggerEvent::Completed, this, &ThisClass::MoveForward);
@@ -93,9 +97,9 @@ void APixelShipPlayer::MoveForward(const FInputActionValue& Value)
 	//
 	if(AccelerationFloatCurve != nullptr){CurveValueForward = AccelerationFloatCurve->GetFloatValue(HoldStartTime);}
 	//
-	if(Controller != nullptr && Arrow != nullptr )
+	if(Controller != nullptr && RedArrow != nullptr )
 	{
-		if(InputValue != 0.0f){ ForwardDirection = Arrow->GetForwardVector() * MovementSpeed * InputValue* CurveValueForward ;}
+		if(InputValue != 0.0f){ ForwardDirection = RedArrow->GetForwardVector() * MovementSpeed * InputValue* CurveValueForward ;}
 		
 		PixelShip->SetPhysicsLinearVelocity(ForwardDirection,true);
 	
@@ -112,9 +116,9 @@ void APixelShipPlayer::MoveRight(const FInputActionValue& Value)
 	//
 	if(AccelerationFloatCurve != nullptr){CurveValueRight = AccelerationFloatCurve->GetFloatValue(HoldStartTime_MoveRight);}
 	//
-	if (Controller != nullptr && Arrow !=nullptr)
+	if (Controller != nullptr && GreenArrow !=nullptr)
 	{	
-		RightDirection = Arrow->GetUpVector();
+		RightDirection = GreenArrow->GetForwardVector();
 	
 		if (InputValue != 0.0f) { DirectionVec = RightDirection * MovementSpeed * InputValue*CurveValueRight; }
 	
@@ -127,7 +131,7 @@ void APixelShipPlayer::MoveForward_RE(const FInputActionValue& Value)
 {
 	float InputValue = Value.Get<float>();
 	
-	if (Controller != nullptr && Arrow != nullptr)
+	if (Controller != nullptr )
 	{	
 
 	}
