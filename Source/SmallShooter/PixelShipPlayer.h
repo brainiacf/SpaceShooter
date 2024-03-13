@@ -17,6 +17,7 @@ class UInputMappingContext;
 class UInputAction;
 class UCapsuleComponent;
 class UCurveFloat;
+class USceneComponent;
 //
 
 //
@@ -31,9 +32,14 @@ class SMALLSHOOTER_API APixelShipPlayer : public APawn
 public:
 	
 	APixelShipPlayer();
+
+	FRotator PixelShipRotation;
+	FRotator GreenArrowRot;
+	
 	/*StaticMeshComponent*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PixelShip")
 	UStaticMeshComponent*PixelShip;
+
 
 	/*ArrowComponent*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PixelShip")
@@ -109,7 +115,7 @@ protected:
 	void MoveForward(const FInputActionValue& Value);
 	void MoveForward_RE(const FInputActionValue& Value);
     void MoveRight(const FInputActionInstance& Instance);
-	void MoveRight_RE(const FInputActionValue& Value);
+	void MoveRight_RE(const FInputActionInstance& Instance);
 	//
 
 public:	

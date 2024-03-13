@@ -11,40 +11,57 @@
 #include "GameFramework/FloatingPawnMovement.h"
 #include "Curves/CurveFloat.h"
 #include "Components/ArrowComponent.h"
+#include "Components/SceneComponent.h"
 
 APixelShipPlayer::APixelShipPlayer()
 {
  	
 	PrimaryActorTick.bCanEverTick = true;
 
+	// /*Root Scene Component*/
+	// Root = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+	// SetRootComponent(Root);	
+
 	PixelShip = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PixelShip"));
 
+	
+
+	
 	/*Initialize Arrow Components*/
 	BlueArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("BlueArrow"));
 	BlueArrow->ArrowColor = FColor::Blue;
-	
+	//BlueArrow->SetWorldScale3D(FVector(0.5f,0.5f,0.5f));
+	BlueArrow->AttachToComponent(PixelShip,FAttachmentTransformRules::KeepWorldTransform);
 	GreenArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("GreenArrow"));
 	GreenArrow->ArrowColor = FColor::Green;
+	GreenArrow->AttachToComponent(PixelShip,FAttachmentTransformRules::KeepWorldTransform);
+	//GreenArrow->SetWorldScale3D(FVector(0.5f,0.5f,0.5f));
 	
 	RedArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("RedArrow"));
 	RedArrow->ArrowColor = FColor::Red;
+	RedArrow->AttachToComponent(PixelShip,FAttachmentTransformRules::KeepWorldTransform);
+	//RedArrow->SetWorldScale3D(FVector(0.5f,0.5f,0.5f));
+	
 	//
-	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
-	Capsule->SetupAttachment(PixelShip);
-	//23.197985 capsule half height
-	//23.197985 capsule radius
 	
 	/*SpringArom Component*/
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
-	SpringArm->SetupAttachment(Capsule);
+	SpringArm->SetupAttachment(PixelShip);
 	SpringArm->TargetArmLength = 250.0f;
 	SpringArm->bUsePawnControlRotation = true;
+	SpringArm->SetRelativeRotation(FRotator(90,0.0f,0.0f));
 	//
 	/*Camera Component*/
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
 	Camera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
+	
 	//
+	
+	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
+	Capsule->SetupAttachment(PixelShip);
+	//23.197985 capsule half height
+	//23.197985 capsule radius
 	//UFloatingPawnMovement* FloatingPawnMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingPawnMovement"));
 	
 }
@@ -67,6 +84,8 @@ void APixelShipPlayer::BeginPlay()
 void APixelShipPlayer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	PixelShipRotation = PixelShip->GetComponentRotation();
+	GreenArrow->SetRelativeRotation(FRotator(PixelShipRotation.Roll,GreenArrow->GetComponentRotation().Yaw,GreenArrow->GetComponentRotation().Roll));
 
 }
 
@@ -77,8 +96,11 @@ void APixelShipPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	{
 		/*Moving*/
 		EnhancedInputComponent->BindAction(MoveForwardAction, ETriggerEvent::Triggered, this, &ThisClass::MoveForward);
+		
 		EnhancedInputComponent->BindAction(MoveRightAction, ETriggerEvent::Triggered, this, &ThisClass::MoveRight);
+
 		EnhancedInputComponent->BindAction(MoveForwardAction,ETriggerEvent::Completed, this, &ThisClass::MoveForward);
+
 		EnhancedInputComponent->BindAction(MoveRightAction, ETriggerEvent::Completed, this, &ThisClass::MoveRight_RE);
 		// Looking
 		//EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AEnhancedInputDeleteCharacter::Look);
@@ -114,8 +136,7 @@ void APixelShipPlayer::MoveRight(const FInputActionInstance& Instance)
 {
 	float InputValue = Instance.GetValue().Get<float>();
 	float ElapsedTime = Instance.GetElapsedTime();
-	//float HoldStartTime_MoveRight = GetWorld()->GetTimeSeconds();
-	//if(InputValue == 0.0f){HoldStartTime_MoveRight = 0.0f;}//Reset the time to 0.0f if the input value is 0.0f
+
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("TIme: %f"),HoldStartTime_MoveRight));
 	//
 	if(AccelerationFloatCurve != nullptr){CurveValueRight = AccelerationFloatCurve->GetFloatValue(ElapsedTime);}
@@ -137,21 +158,25 @@ void APixelShipPlayer::MoveRight(const FInputActionInstance& Instance)
 		
 		float RollIntepTo = FMath::FInterpTo(GreenArrowRotation.Roll,TargetRotation*InputValue,GetWorld()->GetDeltaSeconds(),ShipIntertia);
 		float ClampRollTo = FMath::Clamp(RollIntepTo,-MaximumRotation,MaximumRotation);
+		if(ElapsedTime > 0.0f){
 		PixelShip->SetRelativeRotation(
-			FRotator(-ClampRollTo,PixelShip->GetComponentRotation().Yaw,PixelShip->GetComponentRotation().Roll),
-			true);
-		//if input value -1[A] or 1[D]
+			FRotator(PixelShip->GetComponentRotation().Pitch,PixelShip->GetComponentRotation().Yaw,ClampRollTo),true);}
+			
 
 	}
 
 }
-void APixelShipPlayer::MoveRight_RE(const FInputActionValue& Value)
+void APixelShipPlayer::MoveRight_RE(const FInputActionInstance& Instance)
 {
-	float InputValue = Value.Get<float>();
-	
+	float InputValue = Instance.GetValue().Get<float>();
+	float ElapsedTime = Instance.GetElapsedTime();
+
 	if (Controller != nullptr )
 	{	
-
+		
+			PixelShip->SetRelativeRotation(FRotator(0.0,0.0,0.0),true);
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("InputValue: %f"),InputValue));
+		
 	}
 }
 
